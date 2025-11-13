@@ -1,0 +1,696 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Naufal Daffa - Digital Media Strategist</title>
+  <meta name="description" content="Naufal Daffa — Digital Media Strategist. Crafting Digital Stories that Connect. Portofolio, projects, achievements, blog, and contact." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome (icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root{
+      --bg: #ffffff;
+      --surface: #f8fafc;
+      --muted: #6b7280;
+      --accent: #387AEB;
+      --accent-700: #2e63d6;
+      --text: #0f172a;
+      --glass: rgba(255,255,255,0.6);
+      --card-shadow: 0 6px 20px rgba(16,24,40,0.06);
+    }
+    .dark{
+      --bg: #081028;
+      --surface: #07122a;
+      --muted: #94a3b8;
+      --accent: #7aa7ff;
+      --accent-700: #6a9bff;
+      --text: #e6eefc;
+      --glass: rgba(255,255,255,0.03);
+      --card-shadow: 0 6px 20px rgba(2,6,23,0.6);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background:var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+    a{color:inherit}
+    .container{max-width:1100px;margin:0 auto;padding:28px}
+    header{
+      position:fixed;left:0;right:0;top:16px;z-index:1200;display:flex;justify-content:center;pointer-events:none
+    }
+    .nav-wrap{pointer-events:auto;background:var(--glass);backdrop-filter:blur(6px);padding:10px 16px;border-radius:14px;box-shadow:var(--card-shadow);display:flex;align-items:center;gap:18px}
+    .brand{font-weight:700;font-family:'Poppins',sans-serif;color:var(--text);letter-spacing:0.2px}
+    nav ul{list-style:none;display:flex;gap:10px;margin:0;padding:0;align-items:center}
+    nav a{display:inline-block;padding:8px 12px;border-radius:10px;text-decoration:none;color:var(--muted);font-weight:600;font-size:14px}
+    nav a.active, nav a:hover{background:transparent;color:var(--text);box-shadow:inset 0 -2px 0 var(--accent);}
+    .controls{display:flex;gap:8px;align-items:center}
+    .btn-ghost{background:transparent;border:1px solid transparent;padding:7px;border-radius:10px;cursor:pointer}
+    .icon-btn{width:40px;height:40px;border-radius:10px;display:inline-grid;place-items:center;border:1px solid rgba(0,0,0,0.06);background:transparent;cursor:pointer}
+    .hero{display:flex;gap:40px;align-items:center;padding-top:120px;padding-bottom:64px}
+    .hero-left{flex:1}
+    .eyebrow{font-weight:600;color:var(--accent);font-size:14px;margin-bottom:8px}
+    .hero h1{font-family:'Poppins',sans-serif;font-size:36px;margin:0 0 14px}
+    .hero p.lead{color:var(--muted);max-width:62ch;margin-bottom:22px}
+    .cta-row{display:flex;gap:12px}
+    .btn-primary{background:var(--accent);color:white;padding:11px 16px;border-radius:12px;border:none;font-weight:700;cursor:pointer}
+    .btn-outline{background:transparent;border:1px solid rgba(0,0,0,0.08);padding:10px 14px;border-radius:12px;cursor:pointer}
+    .hero-right{width:320px;flex-shrink:0}
+    .card-profile{background:var(--surface);border-radius:12px;padding:18px;box-shadow:var(--card-shadow);text-align:center}
+    .avatar{width:120px;height:120px;border-radius:999px;object-fit:cover;margin:6px auto 12px;display:block;border:4px solid rgba(255,255,255,0.6)}
+    .role{font-weight:700;margin-bottom:6px}
+    .small-muted{color:var(--muted);font-size:13px}
+    section{padding:48px 0;border-bottom:1px solid rgba(0,0,0,0.04)}
+    h2.section-title{font-family:'Poppins',sans-serif;font-size:22px;margin:0 0 12px}
+    .grid{display:grid;gap:18px}
+    .about-grid{grid-template-columns:1fr 320px}
+    .about p{color:var(--muted)}
+    .skills{display:flex;flex-wrap:wrap;gap:10px}
+    .skill{padding:8px 12px;border-radius:999px;background:linear-gradient(180deg,rgba(56,122,235,0.12),rgba(56,122,235,0.06));color:var(--accent);font-weight:600}
+    .projects{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .project-card{background:var(--surface);border-radius:12px;padding:16px;box-shadow:var(--card-shadow);transition:transform .25s ease}
+    .project-card:hover{transform:translateY(-6px)}
+    .project-card h3{margin-top:8px;margin-bottom:8px;font-size:16px}
+    .project-meta{color:var(--muted);font-size:13px}
+    .ach-list{display:flex;flex-direction:column;gap:10px}
+    .ach-item{background:var(--surface);padding:12px;border-radius:10px;box-shadow:var(--card-shadow)}
+    .post-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+    .post{background:var(--surface);padding:14px;border-radius:12px}
+    .contact-grid{grid-template-columns:1fr 360px}
+    .contact-card{background:var(--surface);padding:16px;border-radius:12px}
+    .socials{display:flex;gap:10px}
+    .socials a{display:inline-flex;padding:10px;border-radius:10px;background:transparent;border:1px solid rgba(0,0,0,0.06)}
+    footer{padding:28px 0;text-align:center;color:var(--muted);font-size:14px}
+    .reveal{opacity:0;transform:translateY(18px);transition:all .6s cubic-bezier(.2,.9,.3,1)}
+    .reveal.show{opacity:1;transform:none}
+    #back-to-top{position:fixed;right:22px;bottom:28px;width:48px;height:48px;border-radius:12px;background:var(--accent);color:#fff;display:grid;place-items:center;box-shadow:0 6px 18px rgba(56,122,235,0.25);cursor:pointer;z-index:1300}
+    @media (max-width:900px){
+      .hero{flex-direction:column-reverse;align-items:flex-start}
+      .about-grid,.contact-grid{grid-template-columns:1fr}
+      header{top:10px}
+      .container{padding:18px}
+      .hero-right{width:100%}
+    }
+
+    /* Tambahan animasi typing */
+    .eyebrow {
+      border-right: 2px solid var(--accent);
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 4s steps(30, end) forwards, blink 0.8s infinite;
+    }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 260px; }
+    }
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+  
+/* --- Animated Skills & Portofolio Slider --- */
+section#skills, section#slider {
+  padding: 100px 10%;
+  text-align: center;
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+.skill-card {
+  background: var(--surface);
+  padding: 20px;
+  border-radius: 12px;
+  transition: 0.3s;
+  box-shadow: var(--card-shadow);
+  position: relative;
+  overflow: hidden;
+}
+.skill-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(56,122,235,0.3), transparent);
+  transition: all 0.6s;
+}
+.skill-card:hover::before { left: 100%; }
+.skill-card:hover {
+  box-shadow: 0 0 25px var(--accent);
+  transform: translateY(-5px);
+}
+.skill-card img {
+  width: 60px;
+  display: block;
+  margin: 0 auto 10px auto;
+  transition: transform 0.3s;
+}
+.skill-card:hover img {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 10px var(--accent));
+}
+/* --- Experience Card Grid --- */
+.experience-section {
+  padding: 80px 0;
+}
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+/* Card Style */
+.experience-card {
+  background: var(--surface);
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid rgba(56,122,235,0.08);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+/* Hover Glow */
+.experience-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at top left, rgba(56,122,235,0.18), transparent 60%);
+  transform: rotate(25deg);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.experience-card:hover::before { opacity: 1; }
+.experience-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(56,122,235,0.25);
+}
+
+/* Typography */
+.experience-card h3 {
+  margin: 0 0 10px;
+  font-family: 'Poppins', sans-serif;
+}
+.experience-card .date {
+  display: block;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.experience-card p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+.experience-card .btn-outline {
+  display: inline-block;
+  border: 1.5px solid var(--accent);
+  color: var(--accent);
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.experience-card .btn-outline:hover {
+  background: var(--accent);
+  color: white;
+  box-shadow: 0 0 15px var(--accent);
+}
+
+.experience-card {
+  position: relative;
+  z-index: 2;
+}
+
+.experience-section::before,
+.experience-section::after {
+  pointer-events: none; /* ensures background layers don't block clicks */
+}
+
+.experience-card .btn-outline {
+  position: relative;
+  z-index: 3;
+  cursor: pointer;
+}
+
+/* --- Animations --- */
+@keyframes fadeInDown {
+  from {opacity: 0; transform: translateY(-20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+@keyframes slideInLeft {
+  from {opacity: 0; transform: translateX(-50px);}
+  to {opacity: 1; transform: translateX(0);}
+}
+@keyframes slideInRight {
+  from {opacity: 0; transform: translateX(50px);}
+  to {opacity: 1; transform: translateX(0);}
+}
+
+/* Apply Animations */
+.fadeInDown {
+  animation: fadeInDown 0.9s ease forwards;
+}
+.fadeIn {
+  animation: fadeIn 1s ease forwards;
+}
+.slideInLeft {
+  animation: slideInLeft 1s ease forwards;
+}
+.slideInRight {
+  animation: slideInRight 1s ease forwards;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+<style>
+.post {
+  margin-bottom: 20px;
+}
+
+.post h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+}
+
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.post-footer .btn-outline {
+  flex-shrink: 0;
+}
+
+.post-footer .small-muted {
+  font-size: 0.85rem;
+  color: #888;
+}
+</style>
+</head>
+<body>
+
+  <div id="loading-screen" style="position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:var(--bg);z-index:9999">
+    <div style="text-align:center">
+      <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:18px;color:var(--accent)">NAUFAL DAFFA</div>
+      <div style="margin-top:10px;font-size:14px;color:var(--muted)">Crafting Digital Stories that Connect</div>
+    </div>
+  </div>
+
+  <!-- header -->
+  <header>
+    <div class="nav-wrap container">
+      <div class="brand">Naufal Daffa</div>
+      <nav>
+        <ul>
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#achievements" class="nav-link">Achievements</a></li>
+          <li><a href="#blog" class="nav-link">Blog</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div style="flex:1"></div>
+      <div class="controls">
+        <button id="resume-link" class="btn-ghost" title="Download Resume">📄 Resume</button>
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-page">
+    <section id="home" class="container hero">
+      <div class="hero-left reveal">
+        <div class="eyebrow">Digital Media &amp; Communication</div>
+        <h1>Naufal Daffa - Digital Media Strategist</h1>
+        <p class="lead">Crafting digital stories that connect people with brands. I design strategic content, data-informed campaigns, and visual experiences that convert attention into meaningful engagement.</p>
+        <div class="cta-row">
+          <a href="#contact" class="btn-primary">Work with me</a>
+          <a href="#experience" class="btn-outline">See my experience</a>
+        </div>
+      </div>
+
+      <aside class="hero-right reveal">
+        <div class="card-profile">
+          <img src="Gambar_muka dapa/Untitled design.zip - 6.jpg" alt="Naufal avatar" class="avatar">
+          <div class="role">Digital Media Strategist</div>
+          <div class="small-muted">Mahasiswa - Digital Communication &amp; Media</div>
+          <div style="height:12px"></div>
+          <div class="small-muted">Based in Indonesia • Available for freelance/internship</div>
+          <div style="height:12px"></div>
+          <div style="display:flex;gap:8px;justify-content:center;margin-top:12px">
+            <a class="social-link" href="https://github.com/naufaldaffa3105-ai" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a class="social-link" href="www.linkedin.com/in/muhammad-naufal-daffa" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a class="social-link" href="https://www.instagram.com/dapabaw" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="about" class="container reveal">
+      <div class="about-grid grid">
+        <div>
+          <h2 class="section-title">About Me</h2>
+          <p>Hi, I'm <strong>Muhammad Naufal Daffa</strong>, a Digital Media Strategist and a student of Digital Communication &amp; Media. I blend storytelling, data analysis, and contemporary design to create campaigns and content that move people, from awareness to action.</p>
+          <p>I specialise in short-form video strategy, content planning, social media campaigns, and UX-aware landing experiences. I enjoy turning insights into creative briefs and measurable results.</p>
+
+          
+         
+        </div>
+
+        <aside>
+          <div class="card-profile contact-card">
+            <h3 style="margin:0 0 8px">Quick Info</h3>
+            <div class="small-muted">Location</div>
+            <div style="font-weight:600;margin-bottom:8px">Indonesia</div>
+            <div class="small-muted">Education</div>
+            <div style="font-weight:600;margin-bottom:8px">IPB University - Digital Communication &amp; Media</div>
+            <div class="small-muted">Availability</div>
+            <div style="font-weight:600">Freelance / Internship</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Added Animated Skills & Portofolio Section -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card"><img src="https://cdn-icons-png.flaticon.com/128/5968/5968520.png" alt="Photoshop"><p>Photoshop</p></div>
+        <div class="skill-card"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" alt="Figma"><p>Figma</p></div>
+        <div class="skill-card"><img src="https://cdn-icons-png.flaticon.com/128/5968/5968472.png" alt="Illustrator"><p>Illustrator</p></div>
+        <div class="skill-card"><img src="https://img.icons8.com/?size=48&id=iWw83PVcBpLw&format=png" alt="Canva"><p>Canva</p></div>
+        <div class="skill-card"><img src="https://cdn-icons-png.flaticon.com/128/15713/15713436.png" alt="Visual Studio Code"><p>Visual Studio Code</p></div>
+        <div class="skill-card"><img src="https://img.icons8.com/?size=80&id=2AxDEwFw7mqa&format=png" alt="Corel"><p>Corel Draw</p></div>
+      </div>
+    </section>
+
+  
+    <!-- End Added Section -->
+
+
+<section id="experience" class="experience-section">
+  <div class="container">
+    <h2 class="section-title">Experience</h2>
+    <p class="section-subtitle">A journey through design, marketing, and leadership</p>
+
+    <!-- Creative & Design Experience -->
+    <div class="experience-category">
+      <h3>🎨 Creative & Design</h3>
+      <div class="experience-card">
+        <h4>Freelance | Self-Employed <span>(Oct 2024 – Present)</span></h4>
+        <ul>
+          <li><strong>Logo Designer:</strong> Crafted visual identities blending storytelling and design aesthetics. <br><em>Works:</em> Dies Natalis UTP 45, HUT Bekasi 28, Gianyar.</li>
+          <li><strong>Web Designer:</strong> Built responsive, interactive websites for small brands. <br><em>Projects:</em> CactuArt · MuLu Production · JAGO COCK.</li>
+          <li><strong>Packaging Designer:</strong> Designed functional, aesthetic packaging for food and product brands.</li>
+        </ul>
+      <a href="Creative Design Porto/Naufal Daffa_Creative Design_Portofolio.pdf" class="btn-outline">See Details</a>
+      </div>
+    </div>
+
+    <!-- Digital Marketing Experience -->
+    <div class="experience-category">
+      <h3>📱 Digital Marketing & Social Media</h3>
+      <div class="experience-card">
+        <h4>TARA Branding Project - <em>Social Media Specialist</em> <span>(Aug 2024 – Nov 2024)</span></h4>
+        <p>Led social media strategy for Termienal (local F&B). Boosted engagement by <strong>26.44%</strong> and created viral TikTok content with 5K+ views.</p>
+        <p><em>Key Campaigns:</em> Termienal Series · Cebanin Aja</p>
+        <a href="Termienal/Final Report Termienal.pdf" class="btn-outline">See Details</a>
+      </div>
+
+      <div class="experience-card">
+        <h4>SukaBakmi - <em>Social Media Specialist</em> <span>(Jan 2025 – Jul 2025)</span></h4>
+        <p>Developed “SukaSeries” Instagram content concept. Achieved 50%+ engagement on average and grew followers by 5.5%.</p>
+        <p><em>Best-Performing Reels:</em> Pingsan Karena Keenakan · Lari-lari Mengejar SukaBakmi · Gagal Diet di SukaBakmi</p>
+        <a href="Sukabakmi/Final Project Report Sukabakmi.pdf" class="btn-outline">See Details</a>  
+      </div>
+    </div>
+
+    <!-- Event Management Experience -->
+    <div class="experience-category">
+      <h3>🎪 Event Management & Leadership</h3>
+      <div class="experience-card">
+        <h4>SwipeUp 2024 - <em>Project Manager</em> <span>(Aug - Nov 2024)</span></h4>
+        <p>Organized digital marketing event “SwipeUp 2024” for 100+ attendees. Managed 4 teams and coordinated rehearsals, speakers, and production.</p>
+        <a hef="https://www.instagram.com/swipeup.24?igsh=cjkyanAwMWJxY242" class="btn-outline">See Details</a>
+      </div>
+
+      <div class="experience-card">
+        <h4>Sea Care 2024 - <em>Vice Head of Event Division</em> <span>(Apr – Dec 2024)</span></h4>
+        <p>Led marine conservation activities on Pramuka Island, engaging 50 volunteers in mangrove and seahorse preservation.</p>
+        <a hef="https://www.instagram.com/p/DEEu242zj4x/?img_index=9&igsh=MTN6dmUyMmliNDBwcA==" class="btn-outline">See Details</a>
+      </div>
+
+      <div class="experience-card">
+        <h4>Social Visit 2024 - <em>Head of Event Division</em> <span>(Jan - Mar 2024)</span></h4>
+        <p>Directed community outreach for children with special needs in Sukabumi. Managed 18 student organizations and 60+ participants.</p>
+        <a hef="https://www.instagram.com/reel/C4p_TryvzAI/?igsh=MXVhNzlhamdsbW8xeA==" class="btn-outline">See Details</a>
+      </div>
+
+      <div class="experience-card">
+        <h4>Festival Budaya Nusantara XV - <em>Event Staff</em> <span>(Jan - May 2024)</span></h4>
+        <p>Assisted the Yogyakarta delegation, winning “Best Cultural Performance” among 20 teams.</p>
+      <a hef="https://www.instagram.com/wonderfulofyogyakarta?igsh=eGgxb28yaWwzNWw4" class="btn-outline">See Details</a>
+      </div>
+    </div>
+
+    <!-- Community & Volunteer -->
+    <div class="experience-category">
+      <h3>🌍 Community & Volunteer</h3>
+      <div class="experience-card">
+        <p><strong>Sea Care 2024:</strong> Promoted marine ecosystem conservation and environmental awareness.</p>
+        <p><strong>Social Visit 2024:</strong> Fostered inclusivity through activities with children with special needs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <section id="achievements" class="container reveal">
+      <h2 class="section-title">Achievements</h2>
+      <div class="ach-list" style="margin-top:12px">
+        <div class="ach-item">🏆 <strong>1st Outstanding student</strong> - Vocational School IPB Univeristy (Sukabumi) 2024</div>
+        <div class="ach-item">🎖️ <strong>Best Performance</strong> - Festival Budaya Nusantara XV</div>
+        <div class="ach-item">📜 <strong>Published</strong> - 4 articles on media online</div>
+      </div>
+    </section>
+
+    <section id="blog" class="container reveal">
+  <h2 class="section-title">Blog &amp; Writing</h2>
+  <p class="small-muted">Recent essays and notes about trends in digital world.</p>
+  
+  <div class="post-list" style="margin-top:12px;">
+    <article class="post">
+      <h3>Judi Online: Hiburan untuk Orang Kaya atau Jebakan bagi Orang Miskin?</h3>
+      <div class="post-footer">
+        <a href="https://www.askara.co/read/2025/03/07/54089/judi-online:-hiburan-untuk-orang-kaya-atau-jebakan-bagi-orang-miskin" class="btn-outline">See Details</a>
+        <span class="small-muted">7th March 2025</span>
+      </div>
+    </article>
+
+    <article class="post">
+      <h3>Media Sosial Bikin Orang Makin Enggak PD?</h3>
+      <div class="post-footer">
+        <a href="https://www.akurat.co/infotech/1305750108/media-sosial-bikin-orang-makin-enggak-pd" class="btn-outline">See Details</a>
+        <span class="small-muted">11th March 2025</span>
+      </div>
+    </article>
+
+    <article class="post">
+      <h3>Eksplorasi Bumi Pertiwi di Pulau Pramuka, Pesona Permata Biru Kepulauan Seribu yang Wajib Dikunjungi</h3>
+      <div class="post-footer">
+        <a href="https://radarbogor.jawapos.com/wisata/2475766393/eksplorasi-bumi-pertiwi-di-pulau-pramuka-pesona-permata-biru-kepulauan-seribu-yang-wajib-dikunjungi?page=2" class="btn-outline">See Details</a>
+        <span class="small-muted">13th November 2025</span>
+      </div>
+    </article>
+
+    <article class="post">
+      <h3>Tera Fit Rayani, Perjalanan Menjadi Dosen Inspiratif di IPB Sukabumi</h3>
+      <div class="post-footer">
+        <a href="https://www.akurat.co/pendidikan/1305787407/tera-fit-rayani-perjalanan-menjadi-dosen-inspiratif-di-ipb-sukabumi" class="btn-outline">See Details</a>
+        <span class="small-muted">19th March 2025</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+    <section id="contact" class="container reveal">
+      <div class="contact-grid grid">
+        <div>
+          <h2 class="section-title">Contact</h2>
+          <p class="small-muted">I'm open to freelance projects, collaborations, and internship opportunities. Send me a message and I will reply as soon as possible.</p>
+
+          <form id="contact-form" style="margin-top:12px;display:flex;flex-direction:column;gap:10px;max-width:560px">
+            <input name="name" required placeholder="Your name" style="padding:12px;border-radius:10px;border:1px solid rgba(0,0,0,0.06)">
+            <input name="email" type="email" required placeholder="Your email" style="padding:12px;border-radius:10px;border:1px solid rgba(0,0,0,0.06)">
+            <textarea name="message" rows="5" required placeholder="How can I help?" style="padding:12px;border-radius:10px;border:1px solid rgba(0,0,0,0.06)"></textarea>
+            <button type="submit" class="btn-primary">Send Message</button>
+          </form>
+        </div>
+
+        <aside>
+          <div class="contact-card">
+            <h3 style="margin-top:0">Get in touch</h3>
+            <div style="margin-top:6px" class="small-muted">Email</div>
+            <div style="font-weight:700;margin-bottom:8px">naufaldaffa3105@gmail.com</div>
+            <div class="small-muted">Phone</div>
+            <div style="font-weight:700;margin-bottom:8px">+62 896 6088 4440</div>
+            <div class="small-muted">Download</div>
+            <div style="margin-top:8px"><a id="resume-download" href="Resume/CV Muhammad Naufal Daffa Updated.pdf" download class="btn-outline">Download Resume (PDF)</a></div>
+
+            <div style="height:12px"></div>
+            <div class="small-muted">Social</div>
+            <div class="socials" style="margin-top:8px">
+              <a href="https://github.com/naufaldaffa3105-ai" aria-label="github"><i class="fab fa-github"></i></a>
+              <a href="www.linkedin.com/in/muhammad-naufal-daffa" aria-label="linkedin"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div style="margin-bottom:8px">© 2025 Naufal Daffa — All rights reserved</div>
+        <div class="small-muted">Built with care • Minimal, fast, and responsive</div>
+      </div>
+    </footer>
+  </main>
+
+  <div id="back-to-top" title="Back to top" style="display:none">▲</div>
+
+  <script>
+    /* -------------------- Utilities -------------------- */
+    const $ = (s, root = document) => root.querySelector(s);
+    const $$ = (s, root = document) => Array.from(root.querySelectorAll(s));
+
+    // Navigation smooth scroll & active link
+    const navLinks = $$('.nav-link');
+    navLinks.forEach(link => link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const id = link.getAttribute('href').slice(1);
+      const el = document.getElementById(id);
+      if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+      navLinks.forEach(l=>l.classList.remove('active'));
+      link.classList.add('active');
+    }));
+
+    // reveal with intersection observer
+    const revealEls = $$('.reveal');
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(ent => {
+        if(ent.isIntersecting){ ent.target.classList.add('show'); io.unobserve(ent.target); }
+      });
+    },{threshold:0.12});
+    revealEls.forEach(el=>io.observe(el));
+
+    // loading screen
+    const loading = document.getElementById('loading-screen');
+    window.addEventListener('load', ()=>{
+      setTimeout(()=>{
+        loading.style.transition='opacity .5s';
+        loading.style.opacity=0;
+        setTimeout(()=>loading.remove(),600);
+      },600);
+    });
+
+    // back to top
+    const back = document.getElementById('back-to-top');
+    window.addEventListener('scroll', ()=>{
+      if(window.scrollY > 400) back.style.display='grid'; else back.style.display='none';
+
+      // highlight nav
+      const sections = document.querySelectorAll('main section');
+      let current = null;
+      sections.forEach(s=>{
+        const top = s.offsetTop - 120;
+        if(window.scrollY >= top) current = s.id;
+      });
+      if(current){ navLinks.forEach(l=>l.classList.toggle('active', l.getAttribute('href')===('#'+current))); }
+    });
+    back.addEventListener('click', ()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+    // theme toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const stored = localStorage.getItem('site-theme');
+    if(stored === 'dark') document.documentElement.classList.add('dark');
+    function updateThemeIcon(){ themeToggle.innerHTML = document.documentElement.classList.contains('dark') ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>'; }
+    updateThemeIcon();
+    themeToggle.addEventListener('click', ()=>{
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('site-theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+      updateThemeIcon();
+    });
+
+    // resume button (quick download)
+    document.getElementById('resume-link').addEventListener('click', ()=>{
+      // navigate to resumeDownload anchor
+      const a = document.getElementById('resume-download');
+      a && a.click();
+    });
+
+    // contact form (demo: prevent actual submit)
+    const contactForm = document.getElementById('contact-form');
+    contactForm && contactForm.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      alert('Thanks — message received (demo). Replace with your preferred form handler).');
+      contactForm.reset();
+    });
+
+    // small accessibility: focus outlines for keyboard users
+    document.body.addEventListener('keydown', (e)=>{ if(e.key === 'Tab') document.documentElement.classList.add('show-focus'); });
+
+  
+// --- Portfolio Slider ---
+const slides = document.querySelector('.slides');
+const slide = document.querySelectorAll('.slide');
+let currentIndex = 0;
+
+document.querySelector('.next').addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % slide.length;
+  slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+});
+
+document.querySelector('.prev').addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + slide.length) % slide.length;
+  slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+});
+
+
+</script>
+</body>
+</html>
